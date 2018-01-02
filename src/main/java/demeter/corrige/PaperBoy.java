@@ -3,14 +3,24 @@ package demeter.corrige;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Paperboy {
+/**
+ * @author ETY8
+ * class Paper Boy
+ */
+public class PaperBoy {
 	private List<Customer> customers;
 	private double funds;
 
-	public Paperboy() {
+	/**
+	 * constructeur par default
+	 */
+	public PaperBoy() {
 		this.customers = new ArrayList<>();
 	}
 
+	/**
+	 * methode de collecte de payement
+	 */
 	public void collectPayments() {
 		// Le journal coûte 1€
 		double payment = 1.0;
@@ -35,8 +45,7 @@ public class Paperboy {
 	/**
 	 * Setter
 	 * 
-	 * @param customers
-	 *            the customers to set
+	 * @param customers the customers to set
 	 */
 	public void setCustomers(List<Customer> customers) {
 		this.customers = customers;
@@ -54,8 +63,7 @@ public class Paperboy {
 	/**
 	 * Setter
 	 * 
-	 * @param funds
-	 *            the funds to set
+	 * @param funds the funds to set
 	 */
 	public void setFunds(double funds) {
 		this.funds = funds;

@@ -1,30 +1,31 @@
 package ex3;
 
-import java.util.List;
+import static ex3.TypeAnimal.REPTILE;
 
-public class FermeReptile {
+/**
+ * @author Simon SUDRE
+ * class Ferme reptile
+ *
+ */
+public class FermeReptile extends Zone {
 
-	private List<String> types;
-	private List<String> noms;
-	private List<String> comportements;
-	
-	public void addAnimal(String typeAnimal, String nomAnimal, String comportement) {
-		types.add(typeAnimal);
-		noms.add(nomAnimal);
-		comportements.add(comportement);
+	/**
+	 * Constructeur
+	 * @param multiplicateurNouriture pour calcul de quantité nouriture
+	 */
+	public FermeReptile(double multiplicateurNouriture) {
+		super(multiplicateurNouriture);
 	}
-	
-	public void afficherListeAnimaux(){
-		for (String nom: noms){
-			System.out.println(nom);
+
+	/* (non-Javadoc)
+	 * @see ex3.Zone#acceptAnimal(ex3.Animal)
+	 */
+	@Override
+	public boolean acceptAnimal(Animal animal) {
+		if(animal.getType().equals(REPTILE)) {
+			this.addAnimal(animal);
+			return true;
 		}
-	}
-	
-	public int compterAnimaux(){
-		return noms.size();
-	}
-	
-	public double calculerKgsNourritureParJour(){
-		return noms.size() * 0.1;
+		return false;
 	}
 }

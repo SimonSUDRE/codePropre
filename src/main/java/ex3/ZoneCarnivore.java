@@ -1,26 +1,32 @@
 package ex3;
 
-import java.util.List;
+import static ex3.TypeAnimal.MAMMIFERE;
+import static ex3.Comportement.CARNIVORE;
 
-public class ZoneCarnivore {
+/**
+ * @author Simon SUDRE
+ * class Zone carnivore
+ *
+ */
+public class ZoneCarnivore extends Zone {
 
-	private List<String> types;
-	private List<String> noms;
-	private List<String> comportements;
-	
-	public void addAnimal(String typeAnimal, String nomAnimal, String comportement) {
-		types.add(typeAnimal);
-		noms.add(nomAnimal);
-		comportements.add(comportement);
+	/**
+	 * Constructeur
+	 * @param multiplicateurNouriture pour calcul de quantité nouriture
+	 */
+	public ZoneCarnivore(double multiplicateurNouriture) {
+		super(multiplicateurNouriture);
 	}
-	
-	public void afficherListeAnimaux(){
-		for (String nom: noms){
-			System.out.println(nom);
+
+	/* (non-Javadoc)
+	 * @see ex3.Zone#acceptAnimal(ex3.Animal)
+	 */
+	@Override
+	public boolean acceptAnimal(Animal animal) {
+		if(animal.getType().equals(MAMMIFERE) && animal.getComportement().equals(CARNIVORE)) {
+			this.addAnimal(animal);
+			return true;
 		}
-	}
-	
-	public double calculerKgsNourritureParJour(){
-		return noms.size() * 10;
+		return false;
 	}
 }

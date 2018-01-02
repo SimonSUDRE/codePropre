@@ -1,44 +1,58 @@
 package ex3;
 
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author Simon SUDRE
+ * class Zoo
+ *
+ */
 public class Zoo {
 
+	/** String : nom */
 	private String nom;
-	private SavaneAfricaine savaneAfricaine;
-	private ZoneCarnivore zoneCarnivore;
-	private FermeReptile fermeReptile;
-	private Aquarium aquarium;
 	
+	/** List<Zone> : zones */
+	private List<Zone> zones;
+	
+	/**
+	 * Constructeur
+	 * @param nom le nom du zoo
+	 */
 	public Zoo(String nom){
 		this.nom = nom;
+		this.zones = new ArrayList<Zone>();
+		this.zones.add(new Aquarium(0.2));
+		this.zones.add(new ZoneCarnivore(10));
+		this.zones.add(new SavaneAfricaine(10));
+		this.zones.add(new FermeReptile(0.1));
 	}
 	
-	public void addAnimal(String nomAnimal, String typeAnimal, String comportement){
-		if (typeAnimal.equals("MAMMIFERE") && comportement.equals("CARNIVORE")){
-			zoneCarnivore.addAnimal(typeAnimal, nomAnimal, comportement);
-		}
-		else if (typeAnimal.equals("MAMMIFERE") && comportement.equals("HERBIVORE")){
-			savaneAfricaine.addAnimal(typeAnimal, nomAnimal, comportement);
-		}
-		else if (typeAnimal.equals("REPTILE")){
-			fermeReptile.addAnimal(typeAnimal, nomAnimal, comportement);
-		}
-		else if (typeAnimal.equals("POISSON")){
-			aquarium.addAnimal(typeAnimal, nomAnimal, comportement);
+	/**
+	 * ajouter animal 
+	 * @param animal un animal
+	 */
+	public void addAnimal(Animal animal){
+		for(Zone zone : this.getZones()) {
+			zone.acceptAnimal(animal);
 		}
 	}
 	
+	/**
+	 * liste des animaux zoo
+	 */
 	public void afficherListeAnimaux(){
-		savaneAfricaine.afficherListeAnimaux();
-		zoneCarnivore.afficherListeAnimaux();
-		fermeReptile.afficherListeAnimaux();
-		aquarium.afficherListeAnimaux();
+		for(Zone zone : this.getZones()) {
+			zone.afficherListeAnimaux();
+		}
 	}
 
 	/** Getter for nom
 	 * @return the nom
 	 */
 	public String getNom() {
-		return nom;
+		return this.nom;
 	}
 
 	/** Setter
@@ -46,5 +60,21 @@ public class Zoo {
 	 */
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	/**
+	 * GET liste de zone
+	 * @return la liste
+	 */
+	public List<Zone> getZones() {
+		return this.zones;
+	}
+
+	/**
+	 * SET liste de zone
+	 * @param zones la liste
+	 */
+	public void setZones(List<Zone> zones) {
+		this.zones = zones;
 	}
 }
