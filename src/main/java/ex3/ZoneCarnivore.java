@@ -15,7 +15,7 @@ public class ZoneCarnivore extends Zone {
 	 * @param multiplicateurNouriture pour calcul de quantité nouriture
 	 */
 	public ZoneCarnivore(double multiplicateurNouriture) {
-		super(multiplicateurNouriture);
+		super(TypeZone.ZONE_CARNIVORE, multiplicateurNouriture);
 	}
 
 	/* (non-Javadoc)

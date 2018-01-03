@@ -15,7 +15,7 @@ public class SavaneAfricaine extends Zone {
 	 * @param multiplicateurNouriture pour calcul de quantité nouriture
 	 */
 	public SavaneAfricaine(double multiplicateurNouriture) {
-		super(multiplicateurNouriture);
+		super(TypeZone.SAVANE_AFRICAINE, multiplicateurNouriture);
 	}
 
 	/* (non-Javadoc)

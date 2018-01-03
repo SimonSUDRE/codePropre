@@ -14,7 +14,7 @@ public class Aquarium extends Zone {
 	 * @param multiplicateurNouriture pour calcul de quantité nouriture
 	 */
 	public Aquarium(double multiplicateurNouriture) {
-		super(multiplicateurNouriture);
+		super(TypeZone.AQUARIUM, multiplicateurNouriture);
 	}
 
 	/* (non-Javadoc)

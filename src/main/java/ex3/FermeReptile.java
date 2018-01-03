@@ -14,7 +14,7 @@ public class FermeReptile extends Zone {
 	 * @param multiplicateurNouriture pour calcul de quantité nouriture
 	 */
 	public FermeReptile(double multiplicateurNouriture) {
-		super(multiplicateurNouriture);
+		super(TypeZone.FERME_REPTILE, multiplicateurNouriture);
 	}
 
 	/* (non-Javadoc)

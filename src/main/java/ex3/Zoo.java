@@ -30,6 +30,29 @@ public class Zoo {
 	}
 	
 	/**
+	 * ajout de zone dans la liste
+	 * @param zone un zone
+	 */
+	public void addZone(Zone zone) {
+		this.zones.add(zone);
+	}
+	
+	/**
+	 * retourne une zone par son type
+	 * @param type nom d'une zone
+	 * @return la zone du type
+	 */
+	public Zone getZoneByType(TypeZone type) {
+		Zone retourZone = null;
+		for(Zone zone : this.getZones()) {
+			if(type.equals(zone.getType())) {
+				retourZone = zone;
+			}
+		}
+		return retourZone;
+	}
+	
+	/**
 	 * ajouter animal 
 	 * @param animal un animal
 	 */
