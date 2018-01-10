@@ -21,6 +21,7 @@ public abstract class Zone {
 
 	/**
 	 * Constructeur
+	 * @param type type de la zone
 	 * @param multiplicateurNouriture pour calcul de quantité nouriture
 	 */
 	public Zone(TypeZone type, double multiplicateurNouriture) {

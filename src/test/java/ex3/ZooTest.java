@@ -1,7 +1,7 @@
 package ex3;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+//import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +12,7 @@ public class ZooTest {
 	
 	@Before
 	public void setup() throws Exception {
-		Zoo zoo = new Zoo("Thoiry");
+		zoo = new Zoo("Thoiry");
 	}
 	
 	@Test
